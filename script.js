@@ -78,7 +78,7 @@ console.log(second);
 console.log(second.nextElementSibling);
 console.log(second.nextElementSibling.nextElementSibling);
 
-const listContainer = document.querySelector('#list-container')
+const listContainer = document.querySelector('#list-container');
 const listClone = list.cloneNode(true);
 console.log(listClone);
 
@@ -89,10 +89,12 @@ listContainer.appendChild(listClone);
 const container = document.querySelector('#propagation-container');
 const x = document.querySelector('#btn');
 
+// event not stopped here, so bubbles up to the form. 
 container.addEventListener('click', function() {
     console.log('PROPAGATION reaching here. Container fired!');
 })
 
+// click submit button to see the event doesn't reach the parent 
 x.addEventListener('click', function(event) {
     console.log('button fired!');
     event.stopPropagation();
