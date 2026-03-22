@@ -86,11 +86,15 @@ listContainer.appendChild(listClone);
 
 // EVENTS
 
-const x = document.querySelector('#btn')
+const container = document.querySelector('#propagation-container');
+const x = document.querySelector('#btn');
 
-console.log(x);
+container.addEventListener('click', function() {
+    console.log('PROPAGATION reaching here. Container fired!');
+})
 
 x.addEventListener('click', function(event) {
+    console.log('button fired!');
     event.stopPropagation();
 })
 
